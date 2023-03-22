@@ -4,14 +4,14 @@ import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import ir.dunijet.learnpaging3.data.Article
 import ir.dunijet.learnpaging3.data.createdText
 import ir.dunijet.learnpaging3.databinding.ItemArticleBinding
 
-class ArticleAdapter : ListAdapter<Article, ArticleAdapter.ArticleViewHolder>(ARTICLE_DIFF_CALLBACK) {
+class ArticleAdapter : PagingDataAdapter<Article , ArticleAdapter.ArticleViewHolder>(ARTICLE_DIFF_CALLBACK) {
 
     companion object {
         private val ARTICLE_DIFF_CALLBACK = object : DiffUtil.ItemCallback<Article>() {
