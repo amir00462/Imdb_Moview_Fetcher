@@ -1,12 +1,14 @@
 package ir.dunijet.learnpaging3.ui
 
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.android.codelabs.paging.data.Article
-import com.example.android.codelabs.paging.data.createdText
+import ir.dunijet.learnpaging3.data.Article
+import ir.dunijet.learnpaging3.data.createdText
 import ir.dunijet.learnpaging3.databinding.ItemArticleBinding
 
 class ArticleAdapter : ListAdapter<Article, ArticleAdapter.ArticleViewHolder>(ARTICLE_DIFF_CALLBACK) {
@@ -22,6 +24,7 @@ class ArticleAdapter : ListAdapter<Article, ArticleAdapter.ArticleViewHolder>(AR
 
     inner class ArticleViewHolder(private val binding: ItemArticleBinding) : RecyclerView.ViewHolder(binding.root) {
 
+        @RequiresApi(Build.VERSION_CODES.O)
         fun bind(article: Article) {
             binding.apply {
                 binding.title.text = article.title
@@ -35,6 +38,7 @@ class ArticleAdapter : ListAdapter<Article, ArticleAdapter.ArticleViewHolder>(AR
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder =
         ArticleViewHolder(ItemArticleBinding.inflate(LayoutInflater.from(parent.context), parent, false,))
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         val tile = getItem(position)
         if (tile != null) {

@@ -2,12 +2,14 @@ package ir.dunijet.learnpaging3.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import ir.dunijet.learnpaging3.data.ArticleRepository
 import ir.dunijet.learnpaging3.databinding.ActivityArticlesBinding
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ArticleActivity : AppCompatActivity() {
 
@@ -16,7 +18,8 @@ class ArticleActivity : AppCompatActivity() {
         val binding = ActivityArticlesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val viewModel: ArticleViewModel by viewModel()
+        val repository = ArticleRepository()
+        val viewModel = ViewModelProvider(this, ViewModelFactory(this, repository)).get(ArticleViewModel::class.java)
 
         val items = viewModel.items
         val adapter = ArticleAdapter()

@@ -4,7 +4,7 @@ import androidx.lifecycle.AbstractSavedStateViewModelFactory
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.savedstate.SavedStateRegistryOwner
-import com.example.android.codelabs.paging.data.ArticleRepository
+import ir.dunijet.learnpaging3.data.ArticleRepository
 
 class ViewModelFactory(
     owner: SavedStateRegistryOwner,
