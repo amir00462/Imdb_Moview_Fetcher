@@ -4,12 +4,16 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
+
+    buildFeatures {
+        viewBinding true
+    }
 
     defaultConfig {
         applicationId "ir.dunijet.learnpaging3"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -33,7 +37,7 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -46,11 +50,15 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
 
     // paging3
-    implementation "androidx.paging:paging-runtime:3.0.0" // paging
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+    implementation 'androidx.paging:paging-runtime:3.0.0-alpha12'
+
     // testImplementation "androidx.paging:paging-common:$paging_version"  // use for test
     // implementation "androidx.paging:paging-rxjava2:$paging_version"  // use with rxjava
     // implementation "androidx.paging:paging-guava:$paging_version"  // use with guava
     // implementation "androidx.paging:paging-compose:1.0.0-alpha08"  // use in jetpack compose
+
+
 
 
 }
