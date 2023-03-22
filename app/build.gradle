@@ -49,9 +49,14 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
 
+    // Koin
+    implementation "io.insert-koin:koin-android:3.2.0-beta-1"
+
     // paging3
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0'
     implementation 'androidx.paging:paging-runtime:3.0.0-alpha12'
+    implementation 'androidx.paging:paging-common:3.0.0-alpha12'
 
     // testImplementation "androidx.paging:paging-common:$paging_version"  // use for test
     // implementation "androidx.paging:paging-rxjava2:$paging_version"  // use with rxjava
